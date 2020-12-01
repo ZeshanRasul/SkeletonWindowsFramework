@@ -192,13 +192,13 @@ private:
 	void OnMouseMove(int x, int y);
 	void OnMouseEnter();
 	void OnMouseLeave();
-	void OnLeftPressed(int x, int y);
-	void OnLeftReleased(int x, int y);
-	void OnRightPressed(int x, int y);
-	void OnRightReleased(int x, int y);
-	void OnWheelUp(int x, int y);
-	void OnWheelDown(int x, int y);
-	void OnWheelDelta(int x, int y);
+	void OnLeftPressed();
+	void OnLeftReleased();
+	void OnRightPressed();
+	void OnRightReleased();
+	void OnWheelUp();
+	void OnWheelDown();
+	void OnWheelDelta(int delta);
 	void TrimMouseBuffer();
 
 private:
