@@ -1,4 +1,5 @@
 #pragma once
+#include "Events/Event.h"
 
 class Application
 {
@@ -8,7 +9,7 @@ public:
 
 	int Run();
 	
-	// void OnEvent(Event& event);
+	void OnEvent(Event& event);
 
 	inline static Application& Get() { return *s_Instance; }
 

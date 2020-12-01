@@ -208,7 +208,7 @@ void Input::OnWheelUp()
 	TrimMouseBuffer();
 }
 
-void Input::OnWheelUp()
+void Input::OnWheelDown()
 {
 	mouseBuffer.push(InputMouseEvent(InputMouseEvent::Type::WheelDown, *this));
 	TrimMouseBuffer();
@@ -216,7 +216,7 @@ void Input::OnWheelUp()
 
 void Input::OnWheelDelta(int delta)
 {
-	wheelDeltaCarry + delta;
+	wheelDeltaCarry += delta;
 
 	while (wheelDeltaCarry >= WHEEL_DELTA)
 	{

@@ -219,8 +219,8 @@ private:
 
 	bool isLeftPressed = false;
 	bool isRightPressed = false;
-	static int x;
-	static int y;
+	int x;
+	int y;
 	bool isInWindow = false;
 	int wheelDeltaCarry = 0;
 	std::queue<InputMouseEvent> mouseBuffer;
