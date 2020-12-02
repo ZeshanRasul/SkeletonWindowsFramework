@@ -6,7 +6,7 @@
 
 class Input
 {
-	// friend class Window
+	friend class Window;
 public:
 	class InputKeyboardEvent
 	{
@@ -56,7 +56,6 @@ public:
 		}
 	};
 	
-public:
 	class InputMouseEvent
 	{
 	public:

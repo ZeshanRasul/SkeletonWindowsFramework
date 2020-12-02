@@ -54,4 +54,4 @@ public:
 	{}
 
 	EVENT_CLASS_TYPE(KeyTyped)
-}
+};

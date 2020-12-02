@@ -5,13 +5,13 @@
 
 Application* Application::s_Instance = nullptr;
 
-Application::Application()
+Application::Application()	
 {
 	assert(!s_Instance);
 	s_Instance = this;
 
-	// Create window
-	// Set window callback
+	m_Window = std::unique_ptr<Window>(new Window());
+	m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
 };
 
 Application::~Application()
@@ -19,17 +19,28 @@ Application::~Application()
 
 }
 
+void Application::OnEvent(Event& event)
+{
+	EventDispatcher dispatcher(event);
+	dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowClose));
+
+}
+
 int Application::Run()
 {
 	while (m_Running)
 	{
-
+		if (const auto ecode = Window::ProcessMessages())
+		{
+			return *ecode;
+		}
 	}
 
 	return 0;
 }
 
-void Application::OnEvent(Event& event)
+bool Application::OnWindowClose(WindowCloseEvent& event)
 {
-
+	m_Running = false;
+	return true;
 }

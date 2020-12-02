@@ -58,15 +58,16 @@ public:
 	}
 
 	template<typename T>
-	bool Dispatch(EventFn<T> func)
-	{
-		if (m_Event.GetEventType() == T::GetStaticType())
+		bool Dispatch(EventFn<T> func)
 		{
-			m_Event.Handled = func(*(T*)&m_Event);
-			return true;
+			if (m_Event.GetEventType() == T::GetStaticType())
+			{
+				m_Event.Handled = func(*(T*)&m_Event);
+				return true;
+			}
+			
+			return false;
 		}
-		return false;
-	}
 
 private:
 	Event& m_Event;

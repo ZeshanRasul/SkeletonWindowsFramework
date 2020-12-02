@@ -57,6 +57,7 @@ protected:
 
 class MouseButtonPressedEvent : public MouseButtonEvent
 {
+public:
 	MouseButtonPressedEvent(int button)
 		:
 		MouseButtonEvent(button)
@@ -67,6 +68,7 @@ class MouseButtonPressedEvent : public MouseButtonEvent
 
 class MouseButtonReleasedEvent : public MouseButtonEvent
 {
+public:
 	MouseButtonReleasedEvent(int button)
 		:
 		MouseButtonEvent(button)
